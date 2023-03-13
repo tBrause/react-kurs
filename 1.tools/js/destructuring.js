@@ -1,3 +1,5 @@
-let test = 1;
+let name = `Torsten`;
 
-console.log(`hello $test`);
+name = "Neu";
+
+console.log(name);
