@@ -149,7 +149,34 @@ console.log(article.subTitle ? article.subTitle : "");
 
 console.log(article.subTitle ?? "");
 
+article.price = 0;
+console.log(article.price ? article.price : "Preis unbekannt");
+console.log(article.price ?? "Preis unbekannt");
+
 /* Achtung: Der ?? Operator dient nicht der Fehlervermeidung
-wie der Optional Chaining Operator! */
+wie der Optional Chaining Operator!
+Das würde zum Absturz führen: */
 //console.log(article.author.name ?? '');
 console.log(article?.author?.name ?? "");
+
+/* 2. Arrays entpacken
+Hier werden die Variablen firstFruit und secondFruit
+deklariert, sie enthalten den ersten und zweiten Index
+des zugewiesenen Arrays. */
+const fruits = ["Apfel", "Birne"];
+
+/*
+Lange Schreibweise:
+const firstFruit = fruits[0];
+const secondFruit = fruits[1];
+*/
+
+const [firstFruit, secondFruit] = fruits;
+
+/* Möchte man einen Wert auslassen, setzt man einfach ein weiteres
+Komma an die entsprechende Stelle: */
+const [firstPerson, , thirdPerson] = ["Tick", "Trick", "Track"];
+
+/* Möglicherweise fehlenden Werten kann man einen Standard-Wert
+zuweisen: */
+const [city, country = "Deutschland"] = ["Lübeck"];
