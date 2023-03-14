@@ -2025,15 +2025,6 @@ function viewForecast(forecast) {
 					wind_speed: speed_out,
 				},
 			},
-			next_1_hours: {
-				summary: { symbol_code: symbol_code_1_out_new },
-				details: { precipitation_amount },
-			},
-
-			next_6_hours: {
-				summary: { symbol_code: symbol_code_6_out_new },
-				details: { precipitation_amount },
-			},
 		},
 		// next_*_hours
 		data: { next_1_hours: next_1_hours_out },
@@ -2043,27 +2034,24 @@ function viewForecast(forecast) {
 		// Zeit
 		console.log(time);
 
-		console.log(symbol_code_1_out_new);
-		console.log(symbol_code_6_out_new);
-
 		// Icons
-		// next_1_hours
-		// console.log(
-		// 	`next_1_hours: ${
-		// 		next_1_hours_out?.summary?.symbol_code
-		// 			? `${next_1_hours_out.summary.symbol_code} ${next_1_hours_out.details.precipitation_amount}mm`
-		// 			: "Kein Wert"
-		// 	}`
-		// );
+		// next_1_hours;
+		console.log(
+			`next_1_hours: ${
+				next_1_hours_out?.summary?.symbol_code
+					? `${next_1_hours_out.summary.symbol_code} ${next_1_hours_out.details.precipitation_amount}mm`
+					: "Kein Wert"
+			}`
+		);
 
 		// next_6_hours
-		// console.log(
-		// 	`next_6_hours: ${
-		// 		next_6_hours_out?.summary?.symbol_code
-		// 			? `${next_6_hours_out.summary.symbol_code} ${next_6_hours_out.details.precipitation_amount}mm`
-		// 			: "Kein Wert"
-		// 	}`
-		// );
+		console.log(
+			`next_6_hours: ${
+				next_6_hours_out?.summary?.symbol_code
+					? `${next_6_hours_out.summary.symbol_code} ${next_6_hours_out.details.precipitation_amount}mm`
+					: "Kein Wert"
+			}`
+		);
 
 		// next_12_hours
 		console.log(
