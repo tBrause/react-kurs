@@ -11,7 +11,7 @@ console.log(
 );
 console.log("#############");
 
-// Vorschau
+// Daten
 const forecast = [
 	{
 		time: "2023-03-14T10:00:00Z",
@@ -1971,41 +1971,43 @@ const forecast = [
 			},
 		},
 	},
-	// {
-	// 	time: "2023-03-23T06:00:00Z",
-	// 	data: {
-	// 		instant: {
-	// 			details: {
-	// 				air_pressure_at_sea_level: 1008.7,
-	// 				air_temperature: 2.1,
-	// 				cloud_area_fraction: 100,
-	// 				relative_humidity: 88,
-	// 				wind_from_direction: 344.8,
-	// 				wind_speed: 1.4,
-	// 			},
-	// 		},
-	// 		next_6_hours: {
-	// 			summary: { symbol_code: "cloudy" },
-	// 			details: { precipitation_amount: 0 },
-	// 		},
-	// 	},
-	// },
-	// {
-	// 	time: "2023-03-23T12:00:00Z",
-	// 	data: {
-	// 		instant: {
-	// 			details: {
-	// 				air_pressure_at_sea_level: 1011.1,
-	// 				air_temperature: 6.9,
-	// 				cloud_area_fraction: 100,
-	// 				relative_humidity: 55.9,
-	// 				wind_from_direction: 104.5,
-	// 				wind_speed: 3.7,
-	// 			},
-	// 		},
-	// 	},
-	// },
+	{
+		time: "2023-03-23T06:00:00Z",
+		data: {
+			instant: {
+				details: {
+					air_pressure_at_sea_level: 1008.7,
+					air_temperature: 2.1,
+					cloud_area_fraction: 100,
+					relative_humidity: 88,
+					wind_from_direction: 344.8,
+					wind_speed: 1.4,
+				},
+			},
+			next_6_hours: {
+				summary: { symbol_code: "cloudy" },
+				details: { precipitation_amount: 0 },
+			},
+		},
+	},
+	{
+		time: "2023-03-23T12:00:00Z",
+		data: {
+			instant: {
+				details: {
+					air_pressure_at_sea_level: 1011.1,
+					air_temperature: 6.9,
+					cloud_area_fraction: 100,
+					relative_humidity: 55.9,
+					wind_from_direction: 104.5,
+					wind_speed: 3.7,
+				},
+			},
+		},
+	},
 ];
+
+console.log(forecast);
 
 function viewForecast(forecast) {
 	for (const {
@@ -2015,28 +2017,29 @@ function viewForecast(forecast) {
 		data: {
 			instant: {
 				details: {
-					air_pressure_at_sea_level: pressure,
-					air_temperature: temperature,
-					cloud_area_fraction: sky,
-					relative_humidity: humidity,
-					wind_from_direction: direction,
-					wind_speed: speed,
+					air_pressure_at_sea_level: pressure_out,
+					air_temperature: temperature_out,
+					cloud_area_fraction: sky_out,
+					relative_humidity: humidity_out,
+					wind_from_direction: direction_out,
+					wind_speed: speed_out,
 				},
 			},
 		},
 		// next_*_hours
-		data: { next_1_hours: next_1_hours },
-		data: { next_6_hours: next_6_hours },
-		data: { next_12_hours: next_12_hours },
+		data: { next_1_hours: next_1_hours_out },
+		data: { next_6_hours: next_6_hours_out },
+		data: { next_12_hours: next_12_hours_out },
 	} of forecast) {
 		// Zeit
 		console.log(time);
 
+		// Icons
 		// next_1_hours
 		console.log(
 			`next_1_hours: ${
-				next_1_hours?.summary?.symbol_code
-					? `${next_1_hours.summary.symbol_code} ${next_1_hours.details.precipitation_amount}mm`
+				next_1_hours_out?.summary?.symbol_code
+					? `${next_1_hours_out.summary.symbol_code} ${next_1_hours_out.details.precipitation_amount}mm`
 					: "Kein Wert"
 			}`
 		);
@@ -2044,36 +2047,28 @@ function viewForecast(forecast) {
 		// next_6_hours
 		console.log(
 			`next_6_hours: ${
-				next_6_hours?.summary?.symbol_code
-					? `${next_6_hours.summary.symbol_code} ${next_6_hours.details.precipitation_amount}mm`
+				next_6_hours_out?.summary?.symbol_code
+					? `${next_6_hours_out.summary.symbol_code} ${next_6_hours_out.details.precipitation_amount}mm`
 					: "Kein Wert"
 			}`
 		);
 
 		// next_12_hours
 		console.log(
-			`next_12_hours: ${
-				next_12_hours?.summary?.symbol_code
-					? `${next_12_hours.summary.symbol_code}`
-					: "Kein Wert"
-			}`
+			`next_12_hours: ${next_12_hours_out?.summary?.symbol_code ?? "Kein Wert"}`
 		);
 
 		// Details
 		console.log(
-			`${temperature}°C, ${humidity}%, ${
-				next_1_hours?.summary?.symbol_code ?? "Kein Wert"
-			}, ${sky}%, ${pressure}hPa`
+			`${temperature_out}°C, ${humidity_out}%, ${
+				next_1_hours_out?.summary?.symbol_code ?? "Kein Wert"
+			}, ${sky_out}%, ${pressure_out}hPa`
 		);
 
 		// Wind
-		console.log(`${speed}m/s from ${direction}°`);
+		console.log(`${speed_out}m/s from ${direction_out}°`);
 		console.log("----");
 	}
 }
 
 viewForecast(forecast);
-
-console.log("###########");
-
-console.log(forecast); // next_12_hours.summary
