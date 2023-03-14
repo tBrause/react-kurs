@@ -103,3 +103,8 @@ const content = document.querySelector(".nix")?.innerHTML;
 console.log(article.subTitle ?? "");
 
 console.log(article?.author?.name ?? "Kein Name vom Autor");
+
+article.price = 0;
+console.log(article.price ? article.price : "unbekanter Preis");
+// ?? lässt auch 0 zu
+console.log(article.price ?? "unbekanter Preis");
