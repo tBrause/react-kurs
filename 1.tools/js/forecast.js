@@ -2068,6 +2068,8 @@ function viewForecast(forecast) {
 		// Wind
 		console.log(`${speed_out}m/s from ${direction_out}°`);
 		console.log("----");
+
+		return;
 	}
 }
 
