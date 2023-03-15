@@ -1,0 +1,27 @@
+@use '_normalize';
+
+a {
+    color: purple;
+
+    &:hover,
+    &:focus {
+   	 color: blue;
+    }
+}
+
+.main-navigation {
+    background-color: antiquewhite;
+    > ul {
+   	 display: flex;
+   	 gap: 1rem;
+   	 list-style: none;
+   	 padding: 0;
+    }
+
+    a {
+   	 text-decoration: none;
+   	 text-transform: uppercase;
+    }
+}
+
+
