@@ -1,0 +1,39 @@
+{
+	"scripts": {
+		"dev": "npm-run-all --parallel server sass-dev postcss-dev parcel-dev",
+		"build": "npm-run-all --sequential clean sass-build postcss-build",
+		"sass-dev": "sass sass:temp --watch --embed-source-map",
+		"sass-build": "sass sass:temp --embed-source-map",
+		"postcss-dev": "postcss temp/*.css --dir css --use postcss-preset-env --map --watch",
+		"postcss-build": "postcss temp/*.css --dir css --use postcss-preset-env cssnano --map",
+		"server": "browser-sync start --server --watch --files '*.html, css/*.css, js/dist/*.js' ",
+		"parcel-dev": "parcel watch js/src/app.jsx --dist-dir js/dist",
+		"parcel-build": "parcel build js/src/app.jsx --dist-dir js/dist",
+		"clean": "del-cli js/dist/*"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.28.3",
+		"cssnano": "^5.1.15",
+		"del-cli": "^5.0.0",
+		"eslint": "^8.36.0",
+		"eslint-config-prettier": "^8.7.0",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"npm-run-all": "^4.1.5",
+		"parcel": "^2.8.3",
+		"postcss": "^8.4.21",
+		"postcss-cli": "^10.1.0",
+		"postcss-preset-env": "^8.0.1",
+		"process": "^0.11.10",
+		"sass": "^1.59.3"
+	},
+	"dependencies": {
+		"clsx": "^1.2.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"browserslist": [
+		"defaults"
+	]
+}
