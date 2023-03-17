@@ -1,4 +1,4 @@
-// Übersicht zu den ESLint-Regeln: https://eslint.org/docs/rules/
+// https://eslint.org/docs/rules/
 module.exports = {
 	env: {
 		browser: true,
@@ -15,3 +15,4 @@ module.exports = {
 		'prefer-const': 'warn',
 	},
 };
+
