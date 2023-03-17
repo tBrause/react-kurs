@@ -60,6 +60,9 @@ echo "... Datei: prettier.config.js OK"
 echo "/node_modules
 /node_modules/*" > .gitignore
 echo "... Datei: .gitignore OK"
+git rm --cached .gitignore
+echo "... GIT: git rm --cached OK"
+
 
 # ESLint => .eslintrc.js
 echo "// https://eslint.org/docs/rules/
