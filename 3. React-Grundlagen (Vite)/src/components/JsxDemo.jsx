@@ -2,6 +2,7 @@
 // import React from 'react';
 
 import { Fragment } from 'react';
+import Quote from './Quote';
 
 export default function JsxDemo() {
 	// Hier ist JavaScript!
@@ -19,6 +20,8 @@ export default function JsxDemo() {
 				<h3>Meine Tiere</h3>
 				<Emoji icon="🐈‍⬛" description="Katze" />
 			</Parent>
+			{/* Komponente: Quote */}
+			<Quote text="React rockt" source="dev" />
 		</div>
 	);
 }
