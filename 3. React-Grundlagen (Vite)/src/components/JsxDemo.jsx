@@ -3,6 +3,14 @@
 
 import { Fragment } from 'react';
 import Quote from './Quote';
+import PicsumImage, { Conditionals, ImageGrid } from './PixumImages';
+
+const images = [
+	{ id: 1003, alt: 'Reh' },
+	{ id: 237, alt: 'Hund' },
+	{ id: 1001, alt: 'Boot' },
+	{ id: 1015, alt: 'Tal' },
+];
 
 export default function JsxDemo() {
 	// Hier ist JavaScript!
@@ -10,7 +18,7 @@ export default function JsxDemo() {
 	return (
 		<div>
 			{/* Kommentar */}
-			<FirstComponent />
+			{/* <FirstComponent />
 			<Emoji icon="🍀" description="Kleeblatt" />
 			<Emoji icon="🚲" description="Fahrrad" />
 			<Siblings />
@@ -20,10 +28,19 @@ export default function JsxDemo() {
 				<h3>Meine Tiere</h3>
 				<Emoji icon="🐈‍⬛" description="Katze" />
 			</Parent>
-			<Quote text="React rockt" source="dev" />
+			<Quote text="React rockt" source="dev" /> */}
 			{/* Kommentar */}
-			<Collection />
-			<Collection2 />
+			{/* <Collection /> */}
+			{/* <Collection2 /> */}
+
+			{/* Übung: Pixum */}
+			{/* <PicsumImage id="1003" alt="Hund" /> */}
+
+			{/* Übung: ImageGrid */}
+			{/* <ImageGrid images={images} /> */}
+
+			<Conditionals name="" email="torsten.brause@gmail.com" />
+			<Conditionals name="" />
 		</div>
 	);
 }
