@@ -1,3 +1,13 @@
+**scripts**
+
+    "dev": "npm-run-all --parallel sass-dev postcss-dev server",
+    "build": "npm-run-all --sequential sass-build postcss-build",
+    "sass-dev": "sass sass:temp --watch",
+    "sass-build": "sass sass:temp",
+    "postcss-dev": "postcss temp/*.css --dir css --use postcss-preset-env --watch --map",
+    "postcss-build": "postcss temp/*.css --dir css --use postcss-preset-env cssnano --map",
+    "server": "browser-sync start --server --watch"
+
 **npm Pakete**
 
     "browser-sync": "^2.28.3",
