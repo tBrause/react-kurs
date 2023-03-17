@@ -12,7 +12,7 @@
     
 **Install**
 
-/package.json
+*Projektordner*/package.json
 
     {
       "scripts": {
@@ -44,5 +44,6 @@ VSC Console
 
     npm run dev
 
+    npm run build
 
     
