@@ -1,15 +1,23 @@
 echo START INSTALL ...
 
-# Ordner anlegen
+# Strucktur
+####################
+
 # css
 mkdir -p css
 echo ... Ordner: css OK
+# js
+mkdir -p js
+echo ... Ordner: js OK
 # temp
 mkdir -p temp
 echo ... Ordner: temp OK
 # sass
 mkdir -p sass
 echo ... Ordner: sass OK
+
+# Dateien
+####################
 
 # package.json
 echo '{
@@ -81,11 +89,11 @@ echo "<!DOCTYPE html>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Titel</title>
+		<title>Hallo Welt</title>
 		<link rel="stylesheet" href="/css/app.css" />
 		<script defer src="/js/app.js"></script>
 	</head>
-	<body></body>
+	<body><h1>Hallo Welt</h1></body>
 </html>
 " > index.html
 echo ... Datei: index.html OK
@@ -95,30 +103,49 @@ echo "// in index.html eingebunden" > js/app.js
 echo ... Datei: js/app.js OK
 
 # CSS
-echo "/*app.css in index.html eingebunden*/" > css/app.css
+echo "/* CSS */" > css/app.css
 echo ... Datei: css/app.css OK
 
 # SASS
-echo "/*üeber app.css in index.html eingebunden*/" > sass/app.scss
+echo "/* SASS */" > sass/app.scss
 echo ... Datei: sass/app.scss OK
 
 # README.md
 # !!! off !!! echo "" > README.md
-# echo "" > README.md
+echo "**Install** **Build** **DEV**" > README.md
 echo ... Datei: README.md OK
 
 # Ready
 echo "INSTALL COMPLETE ...
 "
 
-echo "install.sh löschen !!!"
+####################
 
-echo "Next ..."
-echo "$ npm install"
-echo "$ npm run dev"
-echo "$ npm run build
-
+echo "install.sh löschen !!!
 "
 
-echo "(I): README.md"
+####################
+
+echo "
+Next ...
+"
+echo "... $ npm install
+"
+npm install
+
+echo "
+Next ...
+"
+echo "... $ npm run build
+"
+npm run build
+
+echo "
+Next ...
+"
+echo "... $ npm run dev
+"
+npm run dev
+
+####################
 
