@@ -20,8 +20,10 @@ export default function JsxDemo() {
 				<h3>Meine Tiere</h3>
 				<Emoji icon="🐈‍⬛" description="Katze" />
 			</Parent>
-			{/* Komponente: Quote */}
 			<Quote text="React rockt" source="dev" />
+			{/* Kommentar */}
+			<Collection />
+			<Collection2 />
 		</div>
 	);
 }
@@ -111,5 +113,23 @@ function Parent(props) {
 			<h2>Meine Familie</h2>
 			{props.children}
 		</div>
+	);
+}
+
+function Collection() {
+	const languages = [{ name: 'HTML' }, { name: 'CSS' }, { name: 'JS' }];
+	const liArray = languages.map(({ name }) => <li key={name}>{name}</li>);
+	return <ul>{liArray}</ul>;
+}
+
+function Collection2() {
+	const languages = [{ name: 'HTML' }, { name: 'CSS' }, { name: 'JS' }];
+
+	return (
+		<ul>
+			{languages.map(({ name }) => (
+				<li key={name}>{name}</li>
+			))}
+		</ul>
 	);
 }
