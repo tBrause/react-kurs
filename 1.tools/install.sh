@@ -1,5 +1,7 @@
 echo START INSTALL ...
 
+# curl -o "ftp://github.com/tBrause/react-kurs/blob/master/1.tools/test.txt"
+
 # Strucktur
 ####################
 
@@ -31,15 +33,15 @@ echo '{
     "server": "browser-sync start --server --watch"
   },
   "devDependencies": {
-    "browser-sync": "^2.28.3",
-    "cssnano": "^5.1.15",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0",
-    "postcss-preset-env": "^8.0.1",
-    "sass": "^1.59.3"
+    "browser-sync": "2.28.*",
+    "cssnano": "5.1.*",
+    "eslint": "8.36.*",
+    "eslint-config-prettier": "8.7.*",
+    "npm-run-all": "4.1.*",
+    "postcss": "8.4.*",
+    "postcss-cli": "10.1.*",
+    "postcss-preset-env": "8.0.*",
+    "sass": "1.59.*"
   },
   "browserslist": [
     "defaults"
@@ -50,7 +52,6 @@ echo ... Datei: package.json OK
 # Prettier => prettier.config.js
 echo "module.exports = {
 	singleQuote: true,
-	printWidth: 80,
 	useTabs: true,
 };
 " > prettier.config.js
@@ -58,11 +59,14 @@ echo "... Datei: prettier.config.js OK"
 
 # GIT => .gitignore
 echo "/node_modules
-/node_modules/*" > .gitignore
-echo "... Datei: .gitignore OK"
-git rm --cached .gitignore
-echo "... GIT: git rm --cached OK"
+/node_modules/*
+/.git
+/.git/*
+/temp
+/temp/*
 
+/package-lock.js" > .gitignore
+echo "... Datei: .gitignore OK"
 
 # ESLint => .eslintrc.js
 echo "// https://eslint.org/docs/rules/
@@ -110,7 +114,9 @@ echo "/* CSS */" > css/app.css
 echo ... Datei: css/app.css OK
 
 # SASS
-echo "/* SASS */" > sass/app.scss
+echo "/* SASS */body {
+	background-color: #333;
+}" > sass/app.scss
 echo ... Datei: sass/app.scss OK
 
 # README.md
@@ -122,11 +128,7 @@ echo ... Datei: README.md OK
 echo "INSTALL COMPLETE ...
 "
 
-####################
-
-echo "install.sh löschen !!!
-"
-
+# npm install build dev
 ####################
 
 echo "
@@ -134,6 +136,7 @@ Next ...
 "
 echo "... $ npm install
 "
+# install
 npm install
 
 echo "
@@ -141,6 +144,7 @@ Next ...
 "
 echo "... $ npm run build
 "
+# bulid
 npm run build
 
 echo "
@@ -148,7 +152,14 @@ Next ...
 "
 echo "... $ npm run dev
 "
+# dev
 npm run dev
 
 ####################
+
+echo "
+Bitte install.sh löschen
+$ rm install.sh
+"
+
 
