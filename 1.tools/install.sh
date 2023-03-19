@@ -1,6 +1,6 @@
-echo START INSTALL ...
+#!/bin/sh
 
-# curl -o "ftp://github.com/tBrause/react-kurs/blob/master/1.tools/test.txt"
+echo START INSTALL ...
 
 # Strucktur
 ####################
@@ -128,7 +128,7 @@ echo ... Datei: README.md OK
 echo "INSTALL COMPLETE ...
 "
 
-# npm install build dev
+# npm install && build && dev
 ####################
 
 echo "
@@ -137,7 +137,7 @@ Next ...
 echo "... $ npm install
 "
 # install
-npm install
+npm install && run build && run dev
 
 echo "
 Next ...
@@ -145,7 +145,7 @@ Next ...
 echo "... $ npm run build
 "
 # bulid
-npm run build
+#npm run build
 
 echo "
 Next ...
@@ -153,7 +153,7 @@ Next ...
 echo "... $ npm run dev
 "
 # dev
-npm run dev
+#npm run dev
 
 ####################
 
