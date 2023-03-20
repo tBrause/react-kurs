@@ -137,7 +137,7 @@ Next ...
 echo "... $ npm install
 "
 # install
-npm install && run build && run dev
+npm install
 
 echo "
 Next ...
@@ -145,7 +145,7 @@ Next ...
 echo "... $ npm run build
 "
 # bulid
-#npm run build
+npm run build
 
 echo "
 Next ...
@@ -153,7 +153,7 @@ Next ...
 echo "... $ npm run dev
 "
 # dev
-#npm run dev
+npm run dev
 
 ####################
 

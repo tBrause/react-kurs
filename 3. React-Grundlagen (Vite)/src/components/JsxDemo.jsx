@@ -4,13 +4,8 @@
 import { Fragment } from 'react';
 import Quote from './Quote';
 import PicsumImage, { Conditionals, ImageGrid } from './PixumImages';
-
-const images = [
-	{ id: 1003, alt: 'Reh' },
-	{ id: 237, alt: 'Hund' },
-	{ id: 1001, alt: 'Boot' },
-	{ id: 1015, alt: 'Tal' },
-];
+import Pioneers from './Pioneers';
+import Gallery from './Gallery';
 
 export default function JsxDemo() {
 	// Hier ist JavaScript!
@@ -32,15 +27,17 @@ export default function JsxDemo() {
 			{/* Kommentar */}
 			{/* <Collection /> */}
 			{/* <Collection2 /> */}
-
 			{/* Übung: Pixum */}
 			{/* <PicsumImage id="1003" alt="Hund" /> */}
-
 			{/* Übung: ImageGrid */}
 			{/* <ImageGrid images={images} /> */}
-
 			<Conditionals name="" email="torsten.brause@gmail.com" />
 			<Conditionals name="" />
+			{/* <SemanticHtml /> */}
+			{/* <HtmlString /> */}
+			{/* <Pioneers /> */}
+			imagesValue();
+			<Gallery />
 		</div>
 	);
 }
@@ -148,5 +145,29 @@ function Collection2() {
 				<li key={name}>{name}</li>
 			))}
 		</ul>
+	);
+}
+
+function SemanticHtml({ headingLevel = 2 }) {
+	const Heading = `h${headingLevel}`;
+
+	return (
+		<section>
+			<Heading>Headline</Heading>
+			<p>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, et.
+			</p>
+		</section>
+	);
+}
+
+function HtmlString() {
+	const textWithHtml = 'Text mit <strong>Formatierung</strong>';
+
+	return (
+		<>
+			<div>{textWithHtml}</div>
+			<div dangerouslySetInnerHTML={{ __html: textWithHtml }} />
+		</>
 	);
 }
