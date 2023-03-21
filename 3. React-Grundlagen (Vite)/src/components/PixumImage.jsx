@@ -18,7 +18,7 @@
 
 // import { images } from './JsxDemo';
 
-export default function PixsumImages({
+export default function PixsumImage({
 	id,
 	height = 300,
 	width = 400,
@@ -28,5 +28,39 @@ export default function PixsumImages({
 
 	return (
 		<img className="image" src={src} width={width} height={height} alt={alt} />
+	);
+}
+
+export function ImageGrid({ images }) {
+	console.log(images);
+
+	return (
+		<section className="image-grid">
+			{images.map((image) => (
+				<PicsumImage {...image} key={image.id} />
+			))}
+		</section>
+	);
+}
+
+export function Conditionals({
+	name = 'Anonymouse',
+	email,
+	items = [],
+	approved = true,
+}) {
+	return (
+		<div>
+			<h2>{name}</h2>
+			<h2>{name ? name : 'Anonymouse'}</h2>
+			{/* bevorzugte Variante */}
+			<h2>{name || 'Anonymouse'}</h2>
+			{email && <a href={`mailto:${email}`}>{email}</a>}
+
+			{items.length > 0 && 'Liste'}
+
+			{approved ? <strong>Genemigt</strong> : <strong>Nicht genemigt</strong>}
+			<hr />
+		</div>
 	);
 }

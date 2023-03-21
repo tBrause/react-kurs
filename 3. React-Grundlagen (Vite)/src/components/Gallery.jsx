@@ -1,6 +1,7 @@
 // import image from './JsxDemo';
 
 import { useState } from 'react';
+import PicsumImage from './PixumImage';
 
 const images = [
 	{ id: 1003, alt: 'Reh', title: 'Test' },
@@ -53,37 +54,61 @@ Bonus: Der thumbnail-Button, der dem großen Bild entspricht, soll disabled sein
 
 */
 
-export default function Gallery({ id, height = 150, width = 200, alt = '' }) {
-	const src = `https://picsum.photos/id/`;
-	// <div dangerouslySetInnerHTML={{ __html: textWithHtml }} />
-
+export default function Gallery2({ title, images }) {
+	const [bigImagesIndex, setbigImagesIndex] = useState(0);
 	return (
-		<div>
-			{images.map(({ id, alt, title }) => (
-				<section key={id} className="gallery">
-					{title ? `<h2>${title}<h2>` : ''}
-					<div className="gallery__big-image">
-						<img
-							src={`${src}/${id}/${width}/${height}`}
-							width={width}
-							height={height}
-							className="image"
-							alt={alt}
-						/>
-					</div>
-					<div className="thumbnails">
-						<button className="thumbnails__button">
-							<img
-								src={`${src}/${id}/${width}/${height}`}
-								width={width}
-								height={height}
-								className="image"
-								alt={alt}
-							/>
-						</button>
-					</div>
-				</section>
-			))}
-		</div>
+		<section class="gallery">
+			{title && <h2>Titel</h2>}
+			<div class="gallery__big-image">
+				<PicsumImage {...bigImage} width={800} height={600} />
+				<img class="image" />
+			</div>
+			<div class="thumbnails">
+				{images.map(({ id, alt, title }) => (
+					<button
+						onClick={() => bigImagesIndex(index)}
+						key={id}
+						class="thumbnails__button"
+					>
+						<PicsumImage {...image} width={200} height={150} />
+					</button>
+				))}
+			</div>
+		</section>
 	);
 }
+
+// export default function Gallery({ id, height = 150, width = 200, alt = '' }) {
+// 	const src = `https://picsum.photos/id/`;
+// 	// <div dangerouslySetInnerHTML={{ __html: textWithHtml }} />
+
+// 	return (
+// 		<div>
+// 			{images.map(({ id, alt, title }) => (
+// 				<section key={id} className="gallery">
+// 					{title ? `<h2>${title}<h2>` : ''}
+// 					<div className="gallery__big-image">
+// 						<img
+// 							src={`${src}/${id}/${width}/${height}`}
+// 							width={width}
+// 							height={height}
+// 							className="image"
+// 							alt={alt}
+// 						/>
+// 					</div>
+// 					<div className="thumbnails">
+// 						<button className="thumbnails__button">
+// 							<img
+// 								src={`${src}/${id}/${width}/${height}`}
+// 								width={width}
+// 								height={height}
+// 								className="image"
+// 								alt={alt}
+// 							/>
+// 						</button>
+// 					</div>
+// 				</section>
+// 			))}
+// 		</div>
+// 	);
+// }

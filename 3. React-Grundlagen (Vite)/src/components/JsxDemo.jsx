@@ -3,9 +3,12 @@
 
 import { Fragment } from 'react';
 import Quote from './Quote';
-import PicsumImage, { Conditionals, ImageGrid } from './PixumImages';
-import Pioneers from './Pioneers';
-import Gallery from './Gallery';
+// import PicsumImage, { Conditionals, ImageGrid } from './PixumImages';
+// import PicsumImages, { Conditionals, ImageGrid } from './PixumImages';
+// import PicsumImages from './PixumImages';
+// import Pioneers from './Pioneers';
+// import GalleryDoz from './GalleryDoz';
+// import images from './JsxDemo';
 
 export default function JsxDemo() {
 	// Hier ist JavaScript!
@@ -31,15 +34,27 @@ export default function JsxDemo() {
 			{/* <PicsumImage id="1003" alt="Hund" /> */}
 			{/* Übung: ImageGrid */}
 			{/* <ImageGrid images={images} /> */}
-			<Conditionals name="" email="torsten.brause@gmail.com" />
-			<Conditionals name="" />
+			{/* <Conditionals name="" email="torsten.brause@gmail.com" /> */}
+			{/* <Conditionals name="" /> */}
 			{/* <SemanticHtml /> */}
 			{/* <HtmlString /> */}
 			{/* <Pioneers /> */}
-			imagesValue();
-			<Gallery />
+
+			{/* <GalleryDoz title="Title" images="gfdgf" /> */}
+			<InlineCSS uppercase={false} />
 		</div>
 	);
+}
+
+function InlineCSS({ uppercase = false, color = 'black' }) {
+	const styles = {
+		padding: '2rem',
+		backgroundColor: 'red',
+		textTransform: uppercase ? 'uppercase' : 'none',
+		color,
+		'--meine-css-variable': 'red',
+	};
+	return <p style={styles}>Inline-CSS</p>;
 }
 
 /* Eine React-Komponente ist eine Funktion, die mit return HTML
