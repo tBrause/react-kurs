@@ -8,9 +8,9 @@ export default function VideoPlayer() {
 	return (
 		<div>
 			<video
-				ref={inputPlay}
-				muted={mute}
+				muted={isMuted}
 				className="video"
+				ref={inputPlay}
 				src="/climbing.mp4"
 			></video>
 			<button onClick={() => inputPlay.current.play()}>Play</button>
