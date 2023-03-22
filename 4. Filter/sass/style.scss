@@ -3,3 +3,7 @@
 @use 'products';
 @use 'misc';
 @use 'filter';
+
+.video {
+	max-width: 100%;
+}
